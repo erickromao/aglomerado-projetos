@@ -8,6 +8,7 @@
     font-size: 62.5%;
     --header-font: 'Arial', 'sans-serif';
     --header-font-size-h1: clamp(3.6rem, 2rem + 5vw, 6rem);
+    --header-font-size-h2: clamp(2.5rem, 1rem + 5vw, 3rem);
     --header-font-size-p1: clamp(1.4rem, 1rem + 1vw, 1.2rem);
     --header-font-size-p2: clamp(.9rem, .5rem + 1vw, 1rem);
 }
@@ -27,7 +28,7 @@ body {
 header {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 8.5rem;
+    margin-bottom: 6.5rem;
 
 }
 
@@ -54,6 +55,41 @@ header h1 {
 
 }
 
+.meuPerfil {
+    display: flex;
+    margin: 4rem auto 0 auto;
+    max-height: 8.8rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    animation: links 700ms 500ms backwards;
+}
+
+.meuPerfil a {
+    padding: .5rem 1.5rem;
+    letter-spacing: .2rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.meuPerfil a {
+    text-decoration: none;
+}
+
+.meuPerfil a:nth-child(1) {
+    background-color: #249cdd;
+    color: white;
+
+}
+
+.meuPerfil a:nth-child(2) {
+    background-color: white;
+    color: black;
+}
+
+
+/*  Main */
+
 .card {
     max-width: 32.9rem;
     position: relative;
@@ -66,6 +102,7 @@ header h1 {
     width: 100%;
     height: 41.6rem;
     object-fit: cover;
+    object-position: top;
     border-radius: 8px;
     transition: opacity 200ms;
     filter: brightness(.5)
@@ -88,7 +125,7 @@ header h1 {
     position: absolute;
     left: 2.8rem;
     bottom: 5.1rem;
-    font-size: 4rem;
+    font-size: var(--header-font-size-h2);
     line-height: 4.8rem;
     display: flex;
     flex-direction: column;
@@ -107,7 +144,20 @@ header h1 {
     color: black;
     border-radius: 20px;
     margin-right: auto;
+    transition: transform 250ms;
 }
+
+.card h2 span:hover {
+    transform: scale(1.2);
+}
+
+.card h2 span a {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 100%;
+}
+
 
 main {
     display: grid;
@@ -141,14 +191,43 @@ main {
     }
 }
 
+@keyframes links {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+main div h2 span {
+    font-weight: 600;
+}
+
+main div:nth-child(1) h2 span {
+    color: #1124f8b4;
+}
+
+main div:nth-child(2) h2 span {
+    color: #f81111b4;
+    font-weight: 600;
+}
+
+main div:nth-child(3) h2 span {
+    color: #249cdd;
+}
+
+
+
 
 @media screen and (min-width: 608px) {
-    header{
+    header {
         margin-bottom: 4.5rem;
     }
 
     body {
-        padding: 3rem 5rem 8rem 5rem ;
+        padding: 3rem 5rem 8rem 5rem;
     }
 
     .all-container {
